@@ -1,0 +1,35 @@
+---
+scenario:
+  name: docker
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options:
+    config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
+platforms:
+  - name: front-server
+    image: centos:7
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT}
+      ANSIBLE_ROLES_PATH: ../../roles
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ${MOLECULE_PROJECT_DIRECTORY}/front-server.yml
+    verify: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/verify.yml
+    prepare: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/prepare.yml
+  config_options:
+    diff:
+      always: true
+  lint:
+    name: ansible-lint
+verifier:
+  name: goss
+  lint:
+    name: yamllint
+    options:
+      config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
+  env:
+    MOLECULE_VERIFIER_TEST_DIRECTORY: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/tests
+  directory: ../shared/tests

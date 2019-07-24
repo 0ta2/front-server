@@ -1,0 +1,7 @@
+---
+- src: git+https://0ta2@bitbucket.org/0ta2/motd-role.git
+  version: master
+- src: git+https://0ta2@bitbucket.org/0ta2/selinux-role.git
+  version: master
+- src: git+https://0ta2@bitbucket.org/0ta2/bash-completion-role.git
+  version: master

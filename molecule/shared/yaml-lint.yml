@@ -1,0 +1,16 @@
+---
+extends: default
+
+ignore: |
+  test_default.yml
+rules:
+  braces:
+    max-spaces-inside: 1
+    level: warning
+  brackets:
+    max-spaces-inside: 1
+    level: warning
+  line-length:
+    max: 200
+    level: warning
+  truthy: disable

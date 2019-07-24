@@ -1,0 +1,7 @@
+---
+- hosts: front-server
+  become: yes
+  roles:
+    - bash-completion-role
+    - selinux-role
+    - motd-role
