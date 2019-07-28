@@ -8,6 +8,7 @@ pipelines:
           - yum -y update && yum install -y epel-release gcc openssl-devel libselinux-python && yum install -y python36-pip python36-devel
           - pip3 install molecule ansible docker
           - export LANG=en_US.utf8
+          - cp ./roles/*/molecule/shared/tests/test*.yml ./molecule/shared/tests/
           - /usr/local/bin/molecule --base-config ./molecule/docker/molecule.yml --env-file ./molecule/shared/.env.yml test --scenario-name docker
         services:
           - docker

@@ -31,7 +31,6 @@
         dest: "{{ goss_test_directory }}/{{ item | basename }}"
       with_fileglob:
         - "{{ lookup('env', 'MOLECULE_VERIFIER_TEST_DIRECTORY') }}/test_*.yml"
-        - "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}/roles/*/molecule/shared/tests/test_*.yml"
 
     - name: Register test files
       shell: "ls {{ goss_test_directory }}/test_*.yml"
@@ -41,6 +40,8 @@
       command: "{{ goss_dst }} -g {{ item }} validate --format {{ goss_format }}"
       register: test_results
       with_items: "{{ test_files.stdout_lines }}"
+      environment:
+        ENVIRONMENT: "{{ lookup('env', 'ENVIRONMENT') }}"
 
     - name: Display details about the Goss results
       debug:

@@ -24,12 +24,12 @@ provisioner:
       always: true
   lint:
     name: ansible-lint
+  env:
+    ENVIRONMENT: ${ENVIRONMENT}
 verifier:
   name: goss
   lint:
     name: yamllint
     options:
       config-file: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/yaml-lint.yml
-  env:
-    MOLECULE_VERIFIER_TEST_DIRECTORY: ${MOLECULE_PROJECT_DIRECTORY}/molecule/shared/tests
   directory: ../shared/tests

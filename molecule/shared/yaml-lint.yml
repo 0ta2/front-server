@@ -2,7 +2,7 @@
 extends: default
 
 ignore: |
-  test_default.yml
+  test_*.yml
 rules:
   braces:
     max-spaces-inside: 1
