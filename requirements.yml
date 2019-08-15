@@ -1,7 +1,20 @@
 ---
-- src: git+https://0ta2@bitbucket.org/0ta2/motd-role.git
+- src: git@bitbucket.org:axm-suzuki/motd-role.git
+  scm: git
   version: master
-- src: git+https://0ta2@bitbucket.org/0ta2/selinux-role.git
+
+- src: git@bitbucket.org:axm-suzuki/selinux-role.git
+  scm: git
   version: master
-- src: git+https://0ta2@bitbucket.org/0ta2/bash-completion-role.git
+
+- src: git@bitbucket.org:axm-suzuki/bash-completion-role.git
+  scm: git
+  version: master
+
+- src: git@bitbucket.org:axm-suzuki/nginx-role.git
+  scm: git
+  version: master
+
+- src: git@bitbucket.org:axm-suzuki/php-fpm-role.git
+  scm: git
   version: master

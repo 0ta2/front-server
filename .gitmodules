@@ -1,9 +1,0 @@
-[submodule "roles/bash-completion-role"]
-	path = roles/bash-completion-role
-	url = git@bitbucket.org:0ta2/bash-completion-role.git
-[submodule "roles/selinux-role"]
-	path = roles/selinux-role
-	url = git@bitbucket.org:0ta2/selinux-role.git
-[submodule "roles/motd-role"]
-	path = roles/motd-role
-	url = git@bitbucket.org:0ta2/motd-role.git

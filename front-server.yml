@@ -5,3 +5,5 @@
     - bash-completion-role
     - selinux-role
     - motd-role
+    - nginx-role
+    - php-fpm-role
